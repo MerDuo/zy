@@ -9,8 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',
-    productionSourceMap: false,
+    assetsPublicPath: '/',
     proxyTable: {
       '/API':{
         target:'http://www.cdutzy.com/apis/API',
@@ -49,7 +48,7 @@ module.exports = {
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
     cacheBusting: true,
 
-    cssSourceMap: false,
+    cssSourceMap: true
   },
 
   build: {
@@ -65,7 +64,7 @@ module.exports = {
      * Source Maps
      */
 
-    productionSourceMap: false,
+    productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 

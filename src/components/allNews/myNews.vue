@@ -78,7 +78,6 @@ export default {
     //     callback: this.passage ? this.getNews : () => {}
     //   });
     // }
-    
   },
   mounted() {
     if (this.passage) this.getNews();
@@ -146,7 +145,7 @@ export default {
       
 
         //获取新闻文章内容,filename.slice(21)是/media/newspassage/+文章名
-        this.$http.get('http://www.cdutzy.com'+ filename.slice(21)).then(res=>{
+        this.$http.get('/api'+ filename.slice(21)).then(res=>{
           // console.log(res);
           this.content.push(res.data);
           // console.log(this.content);          

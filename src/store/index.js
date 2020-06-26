@@ -44,8 +44,7 @@ const store = new Vuex.Store({
     magazine: null,
     barData: null,
     navType: 1,
-    bannerHeight: window.innerHeight,
-    roy: 'roy666'
+    bannerHeight: window.innerHeight
   },
   mutations: {
     setBarData(state, val) {
@@ -56,14 +55,9 @@ const store = new Vuex.Store({
       state.magazine = val;
     },
     setNowPage(state, val) {
-      // console.log(val);
-      // console.log(val);
-      // console.log('aaaaaaaaaaaaaaaaaaaa');
-      // console.log(state.roy);
-      
-      
-      
       state.nowPage = val;
+      // console.log(state.nowPage);
+      
       // console.log(val);
     },
     setImgInfo(state, val) {
@@ -74,6 +68,8 @@ const store = new Vuex.Store({
     },
     setBannerImg(state, val) {
       state.bannerImg = val;
+      // console.log(val);
+      
     },
     setVideoInfo(state, val) {
       state.videoInfo = val;
@@ -106,7 +102,7 @@ const store = new Vuex.Store({
     async getData(context, { url, mutation, callback }) {
       //异步获取数据
       await axios
-        .get('http://www.cdutzy.com/apis/API'+url+'/')
+        .get('/API'+url+'/')
         .then(r => {
           if (url == "/allImages" || url == "/allVedio")
             context.commit(mutation, r.data);
